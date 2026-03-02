@@ -1,0 +1,89 @@
+/* พื้นหลังเต็มจอ (ใส่วิดีโอหรือสีไล่เฉดก็ได้) */
+/* ทำวิดีโอเต็มหน้าจอ */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.video-container video {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+}
+
+/* จัดให้อยู่กลางจอ */
+.form-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ทำการ์ดโปร่งใส */
+.form-card {
+    width: 100%;
+    max-width: 450px;
+    
+    background: rgba(255, 255, 255, 0.2);  /* ความโปร่งใส */
+    backdrop-filter: blur(10px);           /* เบลอพื้นหลัง */
+    -webkit-backdrop-filter: blur(10px);
+
+    border-radius: 15px;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+}
+
+/* ทำ input โปร่งใส */
+.form-control {
+    background: rgba(255,255,255,0.3);
+    border: none;
+    color: white;
+}
+
+
+/* ===== Video Controls กลางล่าง ===== */
+.video-controls {
+    position: fixed;
+    bottom: 30px;          /* ห่างจากขอบล่าง */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 10;
+}
+
+/* ปุ่ม Play */
+.btn-play {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 2px solid gold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-play:hover {
+    background: gold;
+    color: black;
+}
+
+/* ปุ่ม Stop */
+.btn-stop {
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border: 2px solid red;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-stop:hover {
+    background: red;
+}
